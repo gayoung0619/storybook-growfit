@@ -22,6 +22,7 @@
   --color-green-80: #81C230;
   --color-green-20: #DBE9C9;
   --color-purpleblue-80: #577AE2;
+  --color-error: #F35E5E;
 
   --text-xs: 12px;
   --text-xs--line-height: 16px;
@@ -38,12 +39,33 @@
   --text-3xl: 26px;
   --text-3xl--line-height: 26px;
 
-  font-family: "LINESeedKR-Bd", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+/* 700 두께 (Bd) */
 @font-face {
-  font-family: 'LINESeedKR-Bd';
+  font-family: 'LINESeedKR';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
+}
+
+/* 400 두께 (Regular) */
+@font-face {
+  font-family: 'LINESeedKR';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 300 두께 (Light) */
+@font-face {
+  font-family: 'LINESeedKR';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+* {
+  font-family: "LINESeedKR", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
