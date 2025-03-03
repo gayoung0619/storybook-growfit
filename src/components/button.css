@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "tailwindcss/utilities";
+
+.storybook-button {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #D8DADB;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "LINESeedKR-Bd", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.storybook-button--Full {
+  padding: 13px 0;
+  min-width: 299px;
+  width: 100%;
+}
+
+.storybook-button--Large {
+  padding: 13px 20px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.storybook-button--Small {
+  padding: 12px 16px;
+}
+
+.storybook-button--Xsmall {
+  padding: 4px 12px;
+}
+
+.storybook-button--borderR {
+  border-radius: 100px;
+}
+
+.storybook-button--disabled {
+  border: none;
+  background: #F2F2F5;
+  color: #fff;
+}
+
+
+
