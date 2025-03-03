@@ -14,7 +14,7 @@ export interface ButtonProps {
 export const Button = ({
   size = 'Small',
   backgroundColor,
- disabled,
+  disabled,
   borderR,
   label,
   ...props
