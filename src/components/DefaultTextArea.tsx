@@ -3,7 +3,6 @@ import {IconButton} from "./IconButton.tsx";
 export interface IDefaultTextTextAreaProps {
   id: string;
   name: string;
-  errorMessage: string;
   placeholder: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   value: string;

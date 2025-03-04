@@ -30,10 +30,6 @@ const meta = {
       control: 'changed',
       description: '다중텍스트 영역의 값 변경 이벤트'
     },
-    errorMessage: {
-      control: 'text',
-      description: '다중텍스트 영역의 에러 메시지'
-    },
     isError: {
       control: 'boolean',
       description: '에러 상태 여부'
@@ -51,7 +47,6 @@ export const Default: Story = {
     name: "email",
     placeholder: "텍스트를 입력해주세요.",
     value: "",
-    errorMessage: "텍스트를 확인해주세요",
     isError: false,
     count: "0",
     limit: "100",
