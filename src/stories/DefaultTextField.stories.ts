@@ -10,6 +10,10 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
+    id: {
+      control: 'text',
+      description: '텍스트 필드의 id',
+    },
     iconAlt: {
       control: 'text',
       description: '아이콘 이미지의 alt 속성',
@@ -53,6 +57,7 @@ import deleteIcon from "../assets/ic-delete-gray.svg"
 
 export const Default: Story = {
   args: {
+    id: "email",
     iconAlt: "icon",
     iconPath: deleteIcon,
     placeholder: "텍스트를 입력해주세요.",

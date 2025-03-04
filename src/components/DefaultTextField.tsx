@@ -1,6 +1,7 @@
 import {IconButton} from "./IconButton.tsx";
 
 export interface IDefaultTextFieldProps {
+  id: string;
   iconAlt: string;
   errorMessage: string;
   iconPath: string;
@@ -11,29 +12,44 @@ export interface IDefaultTextFieldProps {
   isError: boolean;
 }
 import {ErrorMessage} from "./ErrorMessage.tsx";
+import {useState} from "react";
 export const DefaultTextField = ({
-                                   errorMessage,
-                                   iconAlt,
-                                   iconPath,
-                                   onIconClick,
-                                   placeholder,
-                                   onChange,
-                                   value,
-                                   isError
-                                 }: IDefaultTextFieldProps) => {
+  id,
+  errorMessage,
+  iconAlt,
+  iconPath,
+  onIconClick,
+  placeholder,
+  onChange,
+  value,
+  isError
+}: IDefaultTextFieldProps) => {
+  const [isFocused, setIsFocused] = useState(false);
+  const borderColor= isFocused ? 'border-blue-50' : value ? 'border-gray-30' : 'border-gray-20'
+
   return (
       <div>
-        <input
-            type="text"
-            placeholder={placeholder}
-            onChange={onChange}
-            value={value}
-        />
-        <IconButton
-            alt={iconAlt}
-            iconPath={iconPath}
-            onClick={onIconClick}
-        />
+        <div
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            className={`relative flex justify-between text-base border rounded-[4px] py-[11px] px-[16px] box-border ${borderColor} min-w-[335px]`}>
+          <input
+              id={id}
+              type="text"
+              placeholder={placeholder}
+              onChange={onChange}
+              value={value}
+              className="outline-transparent"
+          />
+          {!!value && (
+              <IconButton
+                  alt={iconAlt}
+                  iconPath={iconPath}
+                  onClick={onIconClick}
+              />
+          )}
+        </div>
+
         {isError && <ErrorMessage>{errorMessage}</ErrorMessage>}
       </div>
   )
