@@ -4,7 +4,7 @@ import { fn } from '@storybook/test';
 import { Button } from '../components/Button.tsx';
 
 const meta = {
-  title: 'Basic/Button',
+  title: 'Buttons/Button',
   component: Button,
   parameters: {
     layout: 'centered',

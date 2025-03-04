@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { DefaultTextField } from '../components/DefaultTextField.tsx';
+import { DefaultSearchBox } from '../components/DefaultSearchBox.tsx';
 
 const meta = {
-  title: 'TextFields/DefaultTextField',
-  component: DefaultTextField,
+  title: 'SearchBox/DefaultSearchBox',
+  component: DefaultSearchBox,
   parameters: {
     layout: 'centered',
   },
@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     id: {
       control: 'text',
-      description: '텍스트 필드의 id',
+      description: '검색 필드의 id',
     },
     iconAlt: {
       control: 'text',
@@ -28,32 +28,24 @@ const meta = {
     },
     placeholder: {
       control: 'text',
-      description: '텍스트필드의 placeholder'
+      description: '검색 필드의 placeholder'
     },
     value: {
       control: 'text',
-      description: '텍스트필드의 값'
+      description: '검색 필드의 값'
     },
     onChange: {
       control: 'changed',
-      description: '텍스트필드 값 변경 이벤트'
+      description: '검색 필드 값 변경 이벤트'
     },
-    errorMessage: {
-      control: 'text',
-      description: '텍스트필드의 에러 메시지'
-    },
-    isError: {
-      control: 'boolean',
-      description: '에러 상태 여부'
-    }
   },
   args: { onClick: fn() },
-} satisfies Meta<typeof DefaultTextField>;
+} satisfies Meta<typeof DefaultSearchBox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-import deleteIcon from "../assets/icon/ic-delete-gray.svg"
+import deleteIcon from "../assets/icon/ic-search-navy.svg"
 
 export const Default: Story = {
   args: {
@@ -62,7 +54,5 @@ export const Default: Story = {
     iconPath: deleteIcon,
     placeholder: "텍스트를 입력해주세요.",
     value: "",
-    errorMessage: "텍스트를 확인해주세요",
-    isError: false,
   },
 };
