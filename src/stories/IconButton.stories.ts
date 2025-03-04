@@ -30,7 +30,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-import deleteIcon from "../assets/ic-delete-gray.svg"
+import deleteIcon from "../assets/icon/ic-delete-gray.svg"
 
 export const Default: Story = {
   args: {

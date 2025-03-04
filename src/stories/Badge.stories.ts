@@ -13,17 +13,36 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color', description: '뱃지의 배경컬러' },
     color: { control: 'color', description: '뱃지의 폰트컬러' },
+    size: {
+      control: 'radio',
+      options: ['Small', 'Large'],
+      description: '뱃지의 크기',
+    },
+    border: {
+      control: 'boolean',
+      description: '뱃지의 테두리 여부',
+    },
   },
-  args: { onClick: fn() },
+  args: {
+    onClick: fn(),
+    label: 'Badge',
+    backgroundColor: '#007bff',
+    color: '#fff',
+    border: true,
+  },
 } satisfies Meta<typeof Badge>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Large: Story = {
   args: {
     size: 'Large',
     label: 'Badge',
+    backgroundColor: '#EBF1FF',
+    color: '#5CA0FF',
+    border: false,
   },
 };
 
@@ -31,5 +50,18 @@ export const Small: Story = {
   args: {
     size: 'Small',
     label: 'Badge',
+    backgroundColor: '#FFC8C7',
+    color: '#FF7170',
+    border: false,
+  },
+};
+
+export const Border: Story = {
+  args: {
+    size: 'Large',
+    label: 'Border',
+    backgroundColor: 'transparent',
+    color: '#BFBFBF',
+    border: true,
   },
 };
