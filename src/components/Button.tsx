@@ -1,32 +1,39 @@
-import React from 'react';
+import { MouseEventHandler } from 'react';
 
-import './button.css';
-
-export interface ButtonProps {
-  backgroundColor?: string;
-  size?: 'Full' | 'Large' | 'Small' | 'Xsmall';
-  disabled?: boolean;
-  borderR: boolean;
+type ButtonSize =  'Large' | 'Small' | 'Xsmall';
+interface ButtonProps {
+  size:  ButtonSize;
+  isDisabled: boolean;
   label: string;
-  onClick?: () => void;
+  onClick: MouseEventHandler<HTMLButtonElement>
+}
+const Large = "py-[13px] px-[20px] text-base text-black border border-gray-20 rounded-[8px]";
+const Small = "py-[12px] px-[16px] text-sm text-white bg-[#4D5159] rounded-[8px]";
+const Xsmall = "py-[4px] px-[12px] text-sm text-white bg-[#4D5159] rounded-[100px]";
+
+const buttonSize: Record<ButtonSize, string> = {
+  Large,
+  Small,
+  Xsmall
 }
 
 export const Button = ({
-  size = 'Small',
-  backgroundColor,
-  disabled,
-  borderR,
-  label,
-  ...props
+                         size,
+                         isDisabled,
+                         label,
+                         onClick = () => {}
 }: ButtonProps) => {
-  const borderRClass = borderR ? 'storybook-button--borderR' : ''
-  const disabledClass = disabled ? 'storybook-button--disabled' : ''
+  const disabledStyle = "disabled:text-white disabled:bg-gray-10 disabled:border-none"
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, borderRClass, disabledClass].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
+      className={`
+        box-border
+        ${buttonSize[size]}
+        ${disabledStyle}
+      `}
+      disabled={isDisabled}
+      onClick={onClick}
     >
       {label}
     </button>

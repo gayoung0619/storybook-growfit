@@ -1,7 +1,4 @@
 import React from 'react';
-
-import './button.css';
-
 export interface BadgeProps {
   size?: 'Large' | 'Small';
   backgroundColor?: string;

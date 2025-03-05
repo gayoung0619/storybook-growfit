@@ -11,38 +11,45 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color', description: '버튼의 배경컬러' },
+    size: {
+      control: 'radio',
+      options: ['Large', 'Small', 'Xsmall'],
+      description: '버튼의 크기',
+    },
+    isDisabled: {
+      control: 'boolean',
+      description: '버튼이 비활성화 되었는지 여부',
+    },
+    label: {
+      control: 'text',
+      description: '버튼의 텍스트 라벨',
+    },
   },
-  args: { onClick: fn() },
+  args: {
+    onClick: fn(),
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Full: Story = {
-  args: {
-    size: 'Full',
-    label: 'Button',
-  },
-};
-
 export const Large: Story = {
   args: {
     size: 'Large',
-    label: 'Button',
+    label: '버튼',
   },
 };
 
 export const Small: Story = {
   args: {
     size: 'Small',
-    label: 'Button',
+    label: '버튼',
   },
 };
 
 export const Xsmall: Story = {
   args: {
     size: 'Xsmall',
-    label: 'Button',
+    label: '버튼',
   },
 };
