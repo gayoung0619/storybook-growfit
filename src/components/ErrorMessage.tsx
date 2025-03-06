@@ -4,6 +4,6 @@ export interface IErrorMessageProps {
 }
 export const ErrorMessage = ({children}: IErrorMessageProps) => {
   return (
-      <p className="absolute bottom-[-10px] text-xs text-error">{children}</p>
+      <p className="absolute bottom-[-10px] text-xs text-error w-max">{children}</p>
   )
 }
