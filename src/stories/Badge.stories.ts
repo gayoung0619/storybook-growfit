@@ -25,7 +25,7 @@ const meta = {
   },
   args: {
     onClick: fn(),
-    label: 'Badge',
+    label: '뱃지',
     backgroundColor: '#007bff',
     color: '#fff',
     border: true,
@@ -39,7 +39,7 @@ type Story = StoryObj<typeof meta>;
 export const Large: Story = {
   args: {
     size: 'Large',
-    label: 'Badge',
+    label: '뱃지',
     backgroundColor: '#EBF1FF',
     color: '#5CA0FF',
     border: false,
@@ -49,7 +49,7 @@ export const Large: Story = {
 export const Small: Story = {
   args: {
     size: 'Small',
-    label: 'Badge',
+    label: '뱃지',
     backgroundColor: '#FFC8C7',
     color: '#FF7170',
     border: false,
